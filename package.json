@@ -1,0 +1,44 @@
+{
+  "name": "fetchsicle",
+  "version": "0.0.0",
+  "description": "Wraps popsicle middleware so that it can be used as fetchware.",
+  "main": "build/cjs/index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "build": "babel src --plugins transform-es2015-modules-commonjs --out-dir build/cjs",
+    "clean": "rm -r build || true",
+    "test": "tape test/node.js",
+    "prepublish": "npm run clean; npm run build && npm run test"
+  },
+  "keywords": [
+    "fetchware",
+    "fetch",
+    "middleware",
+    "popsicle",
+    "plugin",
+    "interop",
+    "adapt",
+    "adapter",
+    "convert"
+  ],
+  "author": "Johnny Hauser <johnnyhauser@gmail.com>",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m59peacemaker/js-fetchsicle"
+  },
+  "dependencies": {
+    "fetchware": "git+https://github.com/m59peacemaker/fetchware.git",
+    "popsicle": "^9.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "catbox-memory": "^2.0.4",
+    "popsicle-cache": "^5.0.1",
+    "popsicle-prefix": "^1.0.0",
+    "popsicle-status": "^2.0.1",
+    "reify": "^0.12.3",
+    "tape": "^4.8.0"
+  }
+}
